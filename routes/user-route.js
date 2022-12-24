@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('./../database/models/User');
 const auth = require('./../middleware/auth');
 
+
 router.get('/profile',auth ,async(req, res) => {
     try {
         res.status(200).send({user: req.user, token: req.token});
