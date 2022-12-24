@@ -29,9 +29,9 @@ app.use('/tasks', taskRoutes);
 
 const auth = require('./middleware/auth');
 
-app.get('/', auth,(req, res) => {
+app.get('/', (req, res) => {
     try {
-        res.status(200).send({user: req.user, token: req.token, logged: req.logged});
+        res.sendStatus(200);
     } catch(e) {
         res.status(400).send({e});
     }
